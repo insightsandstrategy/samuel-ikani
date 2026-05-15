@@ -1295,17 +1295,147 @@ h1, h2, h3, h4 {
   letter-spacing: 1px;
   line-height: 1;
 }
-/* FORCE TIGHT SPACING FIX */
-section {
-  padding: 15px 0 !important;
-}
+/* =========================
+   CLEAN MOBILE SYSTEM
+========================= */
 
-h2 {
-  margin-bottom: 8px !important;
-}
+@media (max-width: 768px) {
 
-p {
-  margin-bottom: 6px !important;
+  /* CONTAINERS */
+  .container,
+  .hero-inner,
+  .hero-content,
+  .knowledge-layout,
+  .knowledge-wrapper {
+    width: 92%;
+  }
+
+  /* GENERAL SECTIONS */
+  section {
+    padding: 60px 0;
+  }
+
+  /* HERO */
+  .hero,
+  .hero-elite,
+  .hero-authority {
+    min-height: 420px;
+    padding: 100px 0 70px;
+  }
+
+  .hero-text h1,
+  .hero-elite h1,
+  .hero-authority h1 {
+    font-size: 36px;
+    line-height: 1.18;
+  }
+
+  .hero-sub,
+  .hero-description {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .hero-tag,
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  /* PROFILE SECTION */
+  .about-split-enhanced,
+  .about-grid,
+  .about-split {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-right {
+    max-width: 100%;
+  }
+
+  .about-right h2 {
+    font-size: 38px;
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+
+  .about-right p {
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+  }
+
+  /* MAIN IMAGE */
+  .main-profile-image {
+    height: auto;
+    max-height: 520px;
+    object-fit: contain;
+    border-radius: 20px;
+  }
+
+  /* SLIDER */
+  .photo-slider {
+    height: 220px;
+    border-radius: 20px;
+  }
+
+  /* EXPERIENCE */
+  .experience-grid {
+    gap: 24px;
+  }
+
+  .experience-card {
+    border-radius: 22px;
+  }
+
+  .experience-content {
+    padding: 24px;
+  }
+
+  .experience-content h3 {
+    font-size: 26px;
+    line-height: 1.25;
+  }
+
+  .experience-content p {
+    font-size: 15px;
+    line-height: 1.85;
+  }
+
+  /* EXECUTIVE IMAGE */
+  .executive-image {
+    margin: 70px 0;
+  }
+
+  .executive-image img {
+    height: 260px;
+    border-radius: 20px;
+  }
+
+  /* FOOTER */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* NAVIGATION */
+  .menu.active {
+    padding: 30px 20px;
+  }
+
+  .menu a {
+    padding: 14px 0;
+    font-size: 15px;
+  }
+
+  /* BUTTONS */
+  .btn,
+  .btn.primary {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 
