@@ -1640,3 +1640,56 @@ h1, h2, h3, h4 {
     width: auto;
   }
 }
+/* =========================
+   FORCE CONSISTENT HERO HEIGHT
+========================= */
+
+.about-page .hero-elite,
+.consulting-page .hero-elite {
+
+  height: 38vh !important;
+  min-height: 360px !important;
+  max-height: 420px !important;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+/* HERO CONTENT */
+
+.about-page .hero-text,
+.consulting-page .hero-text {
+
+  max-width: 720px;
+}
+
+/* MOBILE */
+
+@media(max-width: 768px){
+
+  .about-page .hero-elite,
+  .consulting-page .hero-elite {
+
+    height: 340px !important;
+    min-height: 340px !important;
+    max-height: 340px !important;
+
+    padding: 0 !important;
+  }
+
+  .about-page .hero-text h1,
+  .consulting-page .hero-text h1 {
+
+    font-size: 36px;
+    line-height: 1.15;
+  }
+
+  .about-page .hero-sub,
+  .consulting-page .hero-sub {
+
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}

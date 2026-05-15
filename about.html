@@ -318,17 +318,20 @@
 
 @media(max-width: 768px){
 
-  /* GENERAL SPACING */
-
-  section{
-    overflow: hidden;
-  }
-
   /* HERO SECTION */
 
   .hero-elite{
-    min-height: 85vh;
-    padding: 120px 0 80px;
+
+    height: 340px;
+    min-height: 340px;
+    max-height: 340px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
   }
 
   .hero-text h1{
@@ -546,7 +549,7 @@
 </style>
 </head>
 
-<body>
+<body class="about-page"></body>
 
 <div id="header"></div>
 
@@ -604,6 +607,10 @@
       <div class="slides fade">
         <img src="assets/profile5.jpg" alt="Samuel Ikani">
       </div>
+
+      <div class="slides fade">
+        <img src="assets/profile6.jpg" alt="Samuel Ikani>" 
+       </div>
 
     </div>
 
