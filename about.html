@@ -1,12 +1,549 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <title>About - Samuel Ikani</title>
 
-<link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap"
+  rel="stylesheet"
+/>
+
+<style>
+
+/* =========================
+   ABOUT PAGE
+========================= */
+
+.about-split-enhanced {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 70px;
+  align-items: center;
+  padding: 100px 0;
+}
+
+/* =========================
+   PROFILE IMAGES
+========================= */
+
+.about-images-stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+
+.main-profile-image {
+  width: 100%;
+  height: auto;
+  max-height: 700px;
+  object-fit: contain;
+  border-radius: 24px;
+}
+
+.photo-slider {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.slides {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slides.active {
+  opacity: 1;
+}
+
+.slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================
+   EXECUTIVE IMAGE
+========================= */
+
+.executive-image {
+  margin: 100px 0;
+}
+
+.executive-image img {
+  width: 100%;
+  height: 650px;
+  object-fit: cover;
+}
+
+.image-caption {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.7;
+  letter-spacing: 0.3px;
+}
+
+/* =========================
+   EXPERIENCE SECTION
+========================= */
+
+.experience-grid {
+  display: grid;
+  gap: 35px;
+  margin-top: 50px;
+}
+
+.experience-card {
+  background: linear-gradient(
+    135deg,
+    #071c63 0%,
+    #0c2f91 100%
+  );
+
+  border-radius: 28px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  transition: 0.4s ease;
+
+  box-shadow:
+    0 12px 40px rgba(0,0,0,0.18);
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+}
+
+.experience-content {
+  padding: 42px;
+}
+
+.experience-content h3 {
+  color: #ffffff;
+  font-size: 34px;
+  margin-bottom: 18px;
+  line-height: 1.2;
+
+  font-family: 'Playfair Display', serif;
+}
+
+.experience-content p {
+  color: rgba(255,255,255,0.9);
+  line-height: 1.9;
+  margin-bottom: 14px;
+  font-size: 17px;
+}
+
+.experience-content strong {
+  color: #ffffff;
+}
+
+/* =========================
+   FADE EFFECT
+========================= */
+
+.fade {
+  animation: fadeEffect 1s ease;
+}
+
+@keyframes fadeEffect {
+
+  from {
+    opacity: 0.4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 992px){
+
+  .about-split-enhanced {
+    grid-template-columns: 1fr;
+  }
+
+  .executive-image img {
+    height: 420px;
+  }
+}
+
+@media(max-width: 768px){
+
+  .main-profile-image {
+    height: 380px;
+  }
+
+  .photo-slider {
+    height: 220px;
+  }
+
+  .executive-image img {
+    height: 280px;
+  }
+
+  .experience-content {
+    padding: 28px;
+  }
+
+  .experience-content h3 {
+    font-size: 28px;
+  }
+
+  .experience-content p {
+    font-size: 15px;
+  }
+}
+/* PROFILE SECTION */
+
+.about-split-enhanced {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  align-items: center;
+  padding: 120px 0;
+}
+
+.about-right {
+  max-width: 620px;
+}
+
+.about-right h2 {
+  font-size: 54px;
+  line-height: 1.1;
+  margin-bottom: 34px;
+
+  color: #08153a;
+
+  font-family: 'Playfair Display', serif;
+}
+
+.about-right p {
+  font-size: 18px;
+  line-height: 2;
+  color: #2c2c2c;
+
+  margin-bottom: 28px;
+
+  max-width: 580px;
+}
+
+/* Add subtle spacing rhythm */
+
+.about-right p:last-child {
+  margin-bottom: 0;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 992px){
+
+  .about-split-enhanced {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .about-right {
+    max-width: 100%;
+  }
+}
+
+@media(max-width: 768px){
+
+  .about-right h2 {
+    font-size: 38px;
+  }
+
+  .about-right p {
+    font-size: 16px;
+    line-height: 1.9;
+  }
+}
+/* =========================
+   MOBILE OPTIMIZATION
+========================= */
+
+@media(max-width: 992px){
+
+  /* PROFILE SECTION */
+
+  .about-split-enhanced{
+    grid-template-columns: 1fr;
+    gap: 60px;
+    padding: 80px 0;
+  }
+
+  .about-right{
+    max-width: 100%;
+  }
+
+  /* HERO */
+
+  .hero-text h1{
+    font-size: 52px;
+    line-height: 1.15;
+  }
+
+  .hero-sub{
+    font-size: 17px;
+  }
+
+  /* EXECUTIVE IMAGE */
+
+  .executive-image img{
+    height: 420px;
+    border-radius: 24px;
+  }
+
+  /* EXPERIENCE */
+
+  .experience-content{
+    padding: 34px;
+  }
+}
+
+@media(max-width: 768px){
+
+  /* GENERAL SPACING */
+
+  section{
+    overflow: hidden;
+  }
+
+  /* HERO SECTION */
+
+  .hero-elite{
+    min-height: 85vh;
+    padding: 120px 0 80px;
+  }
+
+  .hero-text h1{
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+
+  .hero-sub{
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .hero-tag{
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  /* PROFILE SECTION */
+
+  .about-split-enhanced{
+    gap: 45px;
+    padding: 70px 0;
+  }
+
+  .main-profile-image{
+    height: 460px;
+    border-radius: 20px;
+  }
+
+  .photo-slider{
+    height: 230px;
+    border-radius: 20px;
+  }
+
+  /* PROFILE TEXT */
+
+  .about-right h2{
+    font-size: 38px;
+    line-height: 1.15;
+    margin-bottom: 26px;
+  }
+
+  .about-right p{
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 22px;
+    max-width: 100%;
+  }
+
+  /* SECTION HEADINGS */
+
+  .about h2,
+  .services h2,
+  .cta h2{
+    font-size: 34px;
+    line-height: 1.2;
+    margin-bottom: 26px;
+  }
+
+  /* EXPERIENCE */
+
+  .experience-grid{
+    gap: 24px;
+    margin-top: 35px;
+  }
+
+  .experience-card{
+    border-radius: 22px;
+  }
+
+  .experience-content{
+    padding: 26px;
+  }
+
+  .experience-content h3{
+    font-size: 26px;
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+
+  .experience-content p{
+    font-size: 15px;
+    line-height: 1.9;
+  }
+
+  /* EXECUTIVE IMAGE */
+
+  .executive-image{
+    margin: 70px 0;
+  }
+
+  .executive-image img{
+    height: 280px;
+    border-radius: 20px;
+  }
+
+  .image-caption{
+    font-size: 13px;
+    line-height: 1.7;
+    padding: 0 10px;
+  }
+
+  /* ACCORDIONS */
+
+  .accordion-header{
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 18px 20px;
+  }
+
+  .accordion-content{
+    padding: 0 20px 20px;
+  }
+
+  .accordion-content p{
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  /* BOARD SECTION */
+
+  .grid.grid-3{
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card{
+    padding: 24px;
+    border-radius: 20px;
+  }
+
+  /* CTA */
+
+  .cta{
+    padding: 80px 0;
+  }
+
+  .cta p{
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .btn.primary{
+    width: 100%;
+    text-align: center;
+    padding: 18px 24px;
+  }
+
+  /* FOOTER */
+
+  .footer{
+    padding-top: 70px;
+  }
+
+  .footer-content{
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .footer-brand,
+  .footer-links,
+  .footer-contact{
+    width: 100%;
+  }
+
+  .footer-links a,
+  .footer-contact p,
+  .footer-socials a{
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .footer-bottom{
+    margin-top: 50px;
+    text-align: center;
+  }
+}
+
+@media(max-width: 480px){
+
+  /* EXTRA SMALL DEVICES */
+
+  .hero-text h1{
+    font-size: 34px;
+  }
+
+  .about-right h2{
+    font-size: 32px;
+  }
+
+  .about h2,
+  .services h2,
+  .cta h2{
+    font-size: 30px;
+  }
+
+  .main-profile-image{
+    height: 400px;
+  }
+
+  .photo-slider{
+    height: 210px;
+  }
+
+  .executive-image img{
+    height: 240px;
+  }
+
+  .experience-content{
+    padding: 22px;
+  }
+}
+
+</style>
 </head>
 
 <body>
@@ -15,11 +552,14 @@
 
 <!-- HERO -->
 <section class="hero-elite">
+
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
 
   <div class="container hero-inner">
+
     <div class="hero-text fade-in">
+
       <p class="hero-tag">ABOUT</p>
 
       <h1>
@@ -30,43 +570,104 @@
       <p class="hero-sub">
         International Development Expert • Evaluation Specialist • Policy Strategist
       </p>
+
     </div>
+
   </div>
+
 </section>
 
-<!-- ✅ PROFILE (FIXED WITH IMAGE) -->
-<section class="about container about-split">
+<!-- PROFILE -->
+<section class="container about-split-enhanced">
 
-  <!-- IMAGE -->
-  <div class="about-left">
-    <img src="assets/profile2.jpg" alt="Samuel Ikani" class="about-img">
+  <!-- IMAGES -->
+  <div class="about-images-stack">
+
+    <!-- MAIN IMAGE -->
+    <img
+      src="assets/profile2.jpg"
+      alt="Samuel Ikani"
+      class="main-profile-image"
+    >
+
+    <!-- PHOTO SLIDER -->
+    <div class="photo-slider">
+
+      <div class="slides fade active">
+        <img src="assets/profile3.jpg" alt="Samuel Ikani">
+      </div>
+
+      <div class="slides fade">
+        <img src="assets/profile4.jpg" alt="Samuel Ikani">
+      </div>
+
+      <div class="slides fade">
+        <img src="assets/profile5.jpg" alt="Samuel Ikani">
+      </div>
+
+    </div>
+
   </div>
 
   <!-- TEXT -->
-  <div class="about-right">
-    <h2>Profile</h2>
+<div class="about-right">
 
-    <p>
-      An accomplished Development Science Specialist and CEO with proven leadership capacity in international development and evaluation. An RCT methodologist and research expert, recognised for driving evidence-based approaches, leading high-performing teams, and applying data, innovation, and faith-driven principles to deliver measurable impact.
-    </p>
+  <h2>Profile</h2>
 
-    <p>
-      Speaks at conferences, workshops, seminars, webinars, and technical working groups fora. Highly sought after for his insightful perspective on development, economic and social discourse.
-    </p>
-  </div>
+  <p>
+    An accomplished Development Science Specialist and CEO
+    with proven leadership capacity in international
+    development and evaluation.
+  </p>
+
+  <p>
+    An RCT methodologist and research expert recognised
+    for driving evidence-based approaches,
+    leading high-performing teams, and applying
+    data, innovation, and faith-driven principles
+    to deliver measurable impact.
+  </p>
+
+  <p>
+    Speaks at conferences, workshops, seminars,
+    webinars, and technical working groups fora.
+    Highly sought after for insightful perspectives
+    on development, economic and social discourse.
+  </p>
+
+  <p>
+    Samuel has worked across policy,
+    governance, strategic evaluation,
+    institutional learning systems,
+    and development research,
+    helping organisations transform
+    data into strategic decision-making frameworks.
+  </p>
+
+</div>
 
 </section>
 
 <!-- RECOGNITION -->
 <section class="about container">
+
   <h2>Recognition</h2>
 
-  <p>1️⃣ Recipient – Prestigious Africa Leaders Institute Scholarship, Grant Writing Program (2025)</p>
-  <p>2️⃣ Recipient – HIV Research Trust Foundation Scholarship, University of the Witwatersrand – South Africa (2015)</p>
+  <p>
+    1️⃣ Recipient – Prestigious Africa Leaders Institute Scholarship,
+    Grant Writing Program (2025)
+  </p>
+
+  <p>
+    2️⃣ Recipient – HIV Research Trust Foundation Scholarship,
+    University of the Witwatersrand – South Africa (2015)
+  </p>
+
 </section>
 
-<!-- EXPERTISE -->
+<!-- FORTE -->
 <section class="about container">
+
   <h2>Forte</h2>
 
   <p>• Research Design (Quantitative, Qualitative & Mixed Methods)</p>
@@ -77,107 +678,218 @@
   <p>• Policy Analysis & Political Economy Analysis</p>
   <p>• Digital Data Collection (ODK, KoboToolbox, CommCare)</p>
   <p>• Strategic Planning, Knowledge Management & Capacity Building</p>
+
 </section>
 
-<!-- EDUCATION -->
-<section class="about container">
-  <h2>Education</h2>
+<!-- CONFERENCE IMAGE -->
+<section class="executive-image">
 
-  <p>
-    <strong>MSc, Business Analytics (Distinction)</strong> | University of Texas, Rio Grande Valley, USA 2021<br>
-    <em>Advanced training in statistical modelling, predictive analytics, machine learning, data visualisation, and composite indicator construction.</em>
+  <img
+    src="assets/conference.jpg"
+    alt="Samuel Ikani speaking at conference"
+  >
+
+  <p class="image-caption">
+    Speaking during a policy and institutional development conference
   </p>
 
-  <p>
-    <strong>MHE, Health Economics</strong> | Bayero University, Kano, Nigeria 2019<br>
-    <em>Econometric analysis, cost-effectiveness, welfare measurement and sectoral productivity assessment.</em>
-  </p>
-
-  <p>
-    <strong>MSc, Health Research</strong> | University of Stirling, Scotland, United Kingdom 2014<br>
-    <em>Mixed-methods research design, systematic reviews, research ethics and protocol development.</em>
-  </p>
-
-  <p>
-    <strong>BSc, Business Management (Second Class Upper)</strong> | University of Jos, Nigeria 2006<br>
-    <em>Foundation in organisational analysis, strategy, finance and enterprise performance.</em>
-  </p>
 </section>
 
 <!-- EXPERIENCE -->
 <section class="about container">
+
   <h2>Professional Experience</h2>
 
-  <div class="accordion">
+  <div class="experience-grid">
 
-    <div class="accordion-item">
-      <button class="accordion-header">
-        Managing Partner / CEO | Insights & Strategy Consulting Limited (2024 – Present)
-        <span class="accordion-icon">▼</span>
-      </button>
-      <div class="accordion-content">
-        <p>• Lead a firm delivering MERL services, surveys & polling, impact evaluation, business intelligence and strategic consulting across Nigeria and Africa.</p>
+    <!-- CARD 1 -->
+    <div class="experience-card">
+
+      <div class="experience-content">
+
+        <h3>
+          Managing Partner / CEO
+        </h3>
+
+        <p>
+          <strong>
+            Insights & Strategy Consulting Limited
+          </strong>
+
+          (2024 – Present)
+        </p>
+
+        <p>
+          Leads a consulting firm delivering MERL services,
+          impact evaluation, business intelligence,
+          strategic advisory and evidence-based
+          research systems across Nigeria and Africa.
+        </p>
+
       </div>
+
     </div>
 
-    <div class="accordion-item">
-      <button class="accordion-header">
-        Director, MERL | Society for Family Health Nigeria (2022 – 2024)
-        <span class="accordion-icon">▼</span>
-      </button>
-      <div class="accordion-content">
-        <p>• Provided organisation-wide MERL leadership, designed indicator systems and learning frameworks for multidonor portfolios.</p>
-        <p>• Managed and provided technical oversight for project MERL teams across health, HIV, malaria and family planning programmes.</p>
-      </div>
-    </div>
+    <!-- CARD 2 -->
+    <div class="experience-card">
 
-    <div class="accordion-item">
-      <button class="accordion-header">
-        Lead Researcher / Evaluator (2016 – 2023)
-        <span class="accordion-icon">▼</span>
-      </button>
-      <div class="accordion-content">
-        <p>• Plan International – KAP baseline survey (ANRIN)</p>
-        <p>• IPAS Nigeria – VAPP Act evaluation</p>
-        <p>• Heartland Alliance – HIV Prevention Programme</p>
-        <p>• Save the Children – DFID WINNN review</p>
+      <div class="experience-content">
+
+        <h3>
+          Director, MERL
+        </h3>
+
+        <p>
+          <strong>
+            Society for Family Health Nigeria
+          </strong>
+
+          (2022 – 2024)
+        </p>
+
+        <p>
+          Led organisation-wide monitoring,
+          evaluation, research and learning systems
+          for large donor-funded programmes across health,
+          HIV, malaria and family planning.
+        </p>
+
       </div>
+
     </div>
 
   </div>
+
+</section>
+
+<!-- EDUCATION -->
+<section class="about container">
+
+  <h2>Education</h2>
+
+  <p>
+    <strong>MSc, Business Analytics (Distinction)</strong> |
+    University of Texas, Rio Grande Valley, USA 2021
+    <br>
+
+    <em>
+      Advanced training in statistical modelling,
+      predictive analytics, machine learning,
+      data visualisation, and composite indicator construction.
+    </em>
+  </p>
+
+  <p>
+    <strong>MHE, Health Economics</strong> |
+    Bayero University, Kano, Nigeria 2019
+    <br>
+
+    <em>
+      Econometric analysis, cost-effectiveness,
+      welfare measurement and sectoral productivity assessment.
+    </em>
+  </p>
+
+  <p>
+    <strong>MSc, Health Research</strong> |
+    University of Stirling, Scotland, United Kingdom 2014
+    <br>
+
+    <em>
+      Mixed-methods research design,
+      systematic reviews, research ethics and protocol development.
+    </em>
+  </p>
+
+  <p>
+    <strong>BSc, Business Management (Second Class Upper)</strong> |
+    University of Jos, Nigeria 2006
+    <br>
+
+    <em>
+      Foundation in organisational analysis,
+      strategy, finance and enterprise performance.
+    </em>
+  </p>
+
+</section>
+
+<!-- LEADERSHIP IMAGE -->
+<section class="executive-image">
+
+  <img
+    src="assets/workshop.jpg"
+    alt="Samuel Ikani leadership session"
+  >
+
+  <p class="image-caption">
+    Facilitating leadership, evaluation and stakeholder engagement sessions
+  </p>
+
 </section>
 
 <!-- PUBLICATIONS -->
 <section class="about container">
+
   <h2>Selected Publications & Reports</h2>
 
   <div class="accordion">
+
     <div class="accordion-item">
+
       <button class="accordion-header">
+
         View Publications
+
         <span class="accordion-icon">▼</span>
+
       </button>
+
       <div class="accordion-content">
-        <p>• Rapid Assessment of NPHCDA-led Integrated Supportive Supervision (2026)</p>
-        <p>• Analytical Assessment of Tinubu Administration Campaign Promises (2025)</p>
-        <p>• Baseline Report — RECONNECT Project (2024)</p>
-        <p>• KAP Baseline Survey — ANRIN Project (2023)</p>
+
+        <p>
+          • Rapid Assessment of NPHCDA-led Integrated Supportive Supervision (2026)
+        </p>
+
+        <p>
+          • Analytical Assessment of Tinubu Administration Campaign Promises (2025)
+        </p>
+
+        <p>
+          • Baseline Report — RECONNECT Project (2024)
+        </p>
+
+        <p>
+          • KAP Baseline Survey — ANRIN Project (2023)
+        </p>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
 
 <!-- CERTIFICATIONS -->
 <section class="about container">
+
   <h2>Certifications</h2>
 
   <div class="accordion">
+
     <div class="accordion-item">
+
       <button class="accordion-header">
+
         View Certifications
+
         <span class="accordion-icon">▼</span>
+
       </button>
+
       <div class="accordion-content">
+
         <p>• MEAL DPro — PM4NGOs, USA</p>
         <p>• Project DPro — PM4NGOs, USA</p>
         <p>• Advanced Monitoring & Evaluation — INTRAC, UK</p>
@@ -186,34 +898,67 @@
         <p>• DHIS2 Aggregate Customisation Fundamentals (2024)</p>
         <p>• Nigerian National Code for Health Research Ethics — CITI Program</p>
         <p>• Human Rights-Based Approach to Development — MS TCDC, Tanzania</p>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
 
 <!-- BOARD -->
 <section class="services">
+
   <div class="container">
+
     <h2>Board & Governance</h2>
 
     <div class="grid grid-3">
-      <div class="card"><p>Chairperson – Vinakul Consulting</p></div>
-      <div class="card"><p>Board Member – Purple Foundation</p></div>
-      <div class="card"><p>Management Board – Insights & Strategy Consulting</p></div>
-      <div class="card"><p>Board Member – SOAR Initiative</p></div>
-      <div class="card"><p>Vice Chair – Girl Pro Africa</p></div>
+
+      <div class="card">
+        <p>Chairperson – Vinakul Consulting</p>
+      </div>
+
+      <div class="card">
+        <p>Board Member – Purple Foundation</p>
+      </div>
+
+      <div class="card">
+        <p>Management Board – Insights & Strategy Consulting</p>
+      </div>
+
+      <div class="card">
+        <p>Board Member – SOAR Initiative</p>
+      </div>
+
+      <div class="card">
+        <p>Vice Chair – Girl Pro Africa</p>
+      </div>
+
     </div>
+
   </div>
+
 </section>
 
 <!-- CTA -->
 <section class="cta">
-  <div class="container">
-    <h2>Work With Samuel</h2>
-    <p>Interested in consulting, mentorship, or collaboration?</p>
 
-    <a href="consulting.html" class="btn primary">Start a Project</a>
+  <div class="container">
+
+    <h2>Work With Samuel</h2>
+
+    <p>
+      Interested in consulting, mentorship, or collaboration?
+    </p>
+
+    <a href="consulting.html" class="btn primary">
+      Start a Project
+    </a>
+
   </div>
+
 </section>
 
 <!-- FOOTER -->
@@ -227,8 +972,8 @@
       <h3>Samuel Ikani</h3>
 
       <p>
-        Driving impact through data, evaluation,
-        and evidence-based policy systems.
+        Driving impact through data,
+        evaluation and evidence-based policy systems.
       </p>
 
     </div>
@@ -241,7 +986,9 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="consulting.html">Consulting</a>
-      <a href="knowledge-products.html">Knowledge Products</a>
+      <a href="knowledge-products.html">
+        Knowledge Products
+      </a>
 
     </div>
 
@@ -254,15 +1001,24 @@
 
       <div class="footer-socials">
 
-        <a href="https://www.linkedin.com/in/samuel-ikani-b015bb41/" target="_blank">
+        <a
+          href="https://www.linkedin.com/in/samuel-ikani-b015bb41/"
+          target="_blank"
+        >
           LinkedIn
         </a>
 
-        <a href="https://x.com/savietikani" target="_blank">
+        <a
+          href="https://x.com/savietikani"
+          target="_blank"
+        >
           Twitter/X
         </a>
 
-        <a href="https://www.facebook.com/Samuel.ikani90" target="_blank">
+        <a
+          href="https://www.facebook.com/Samuel.ikani90"
+          target="_blank"
+        >
           Facebook
         </a>
 
@@ -279,6 +1035,36 @@
 
 </footer>
 
+<script>
+
+/* PROFILE PHOTO SLIDER */
+
+let slideIndex = 0;
+
+const slides = document.querySelectorAll(".slides");
+
+function showSlides() {
+
+  slides.forEach((slide) => {
+    slide.classList.remove("active");
+  });
+
+  slideIndex++;
+
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+
+  slides[slideIndex - 1].classList.add("active");
+
+  setTimeout(showSlides, 4000);
+}
+
+showSlides();
+
+</script>
+
 <script src="script.js"></script>
+
 </body>
 </html>
