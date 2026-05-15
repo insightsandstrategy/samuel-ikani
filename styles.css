@@ -948,7 +948,7 @@ object-position: 100% 30%;
 /* same height as about */
 .consulting-page .hero-elite {
   height: 35vh;
-  min-height: 350;
+  min-height: 350px;
 }
 
 /* remove overlay (plain image) */
@@ -1555,4 +1555,88 @@ h1, h2, h3, h4 {
     justify-content: flex-start;
   }
 
+}
+/* =========================
+   MOBILE NAVBAR FIX
+========================= */
+
+@media(max-width: 768px){
+
+  .nav-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo{
+    margin-right: auto;
+  }
+
+  .menu-toggle{
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu{
+    display: none;
+  }
+
+  .menu.active{
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+
+    top: 78px;
+    left: 0;
+
+    width: 100%;
+
+    background: #000066;
+
+    padding: 25px 20px;
+
+    z-index: 9999;
+  }
+}
+/* =========================
+   HOMEPAGE HERO ALIGNMENT FIX
+========================= */
+
+.home-page .hero-content{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  text-align: left;
+}
+
+.home-page .hero-text{
+  text-align: left;
+  max-width: 560px;
+}
+
+.home-page .hero-actions{
+  justify-content: flex-start;
+}
+@media(max-width: 768px){
+
+  .home-page .hero-content{
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .home-page .hero-text{
+    text-align: left;
+  }
+
+  .home-page .hero-actions{
+    align-items: flex-start;
+  }
+
+  .home-page .hero-actions .btn{
+    width: auto;
+  }
 }
