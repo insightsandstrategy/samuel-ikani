@@ -168,3 +168,67 @@ function initAccordion() {
     });
   });
 }
+/* =========================
+   QUOTES SLIDER
+========================= */
+
+let quoteIndex = 0;
+
+const quoteSlides =
+document.querySelectorAll(".quote-slide");
+
+function rotateQuotes(){
+
+  if(!quoteSlides.length) return;
+
+  quoteSlides.forEach((slide)=>{
+    slide.classList.remove("active");
+  });
+
+  quoteIndex++;
+
+  if(quoteIndex > quoteSlides.length){
+    quoteIndex = 1;
+  }
+
+  quoteSlides[quoteIndex - 1]
+    .classList.add("active");
+
+  setTimeout(rotateQuotes, 7000);
+}
+
+rotateQuotes();
+/* =========================
+   QUOTES SLIDER
+========================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  let quoteIndex = 0;
+
+  const quoteSlides =
+  document.querySelectorAll(".quote-slide");
+
+  if (!quoteSlides.length) return;
+
+  function rotateQuotes(){
+
+    quoteSlides.forEach((slide)=>{
+      slide.classList.remove("active");
+    });
+
+    quoteIndex++;
+
+    if(quoteIndex > quoteSlides.length){
+      quoteIndex = 1;
+    }
+
+    quoteSlides[quoteIndex - 1]
+      .classList.add("active");
+  }
+
+  rotateQuotes();
+
+  setInterval(rotateQuotes, 7000);
+
+});
