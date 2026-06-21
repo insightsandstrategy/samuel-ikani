@@ -232,3 +232,58 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(rotateQuotes, 7000);
 
 });
+
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxQ80Qj7m-1mSRFz16C_yiEt5ciED4JacUP7d--__XNIPIV93m9a9ohSyXEK3NHeR_K/exec";
+
+const form = document.getElementById("consultationForm");
+
+if (form) {
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const button = form.querySelector("button");
+    const message = document.getElementById("formMessage");
+
+    button.disabled = true;
+    button.textContent = "Submitting...";
+
+    const payload = {
+      fullName: document.getElementById("fullName").value,
+      email: document.getElementById("email").value,
+      about: document.getElementById("about").value
+    };
+
+    try {
+
+  await fetch(SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    body: JSON.stringify(payload)
+  });
+
+  message.textContent =
+    "Thank you. Your request has been submitted.";
+
+  message.style.color = "green";
+
+  form.reset();
+
+} catch (error) {
+
+  console.error(error);
+
+  message.textContent =
+    "Something went wrong. Please try again.";
+
+  message.style.color = "red";
+}
+
+    finally {
+
+      button.disabled = false;
+      button.textContent = "Request Consultation";
+    }
+  });
+
+}

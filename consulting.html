@@ -143,17 +143,40 @@
 </section>
 
 <!-- CONTACT -->
+<!-- CONTACT -->
 <section id="contact" class="cta">
   <div class="container">
 
     <h2>Interested in working together?</h2>
 
-    <form class="form">
-      <input type="text" placeholder="Full Name" required>
-      <input type="email" placeholder="Email Address" required>
-      <textarea placeholder="Tell me about your project"></textarea>
+    <form id="consultationForm" class="form">
 
-      <button class="primary">Request Consultation</button>
+      <input
+        type="text"
+        id="fullName"
+        placeholder="Full Name"
+        required
+      >
+
+      <input
+        type="email"
+        id="email"
+        placeholder="Email Address"
+        required
+      >
+
+      <textarea
+        id="about"
+        placeholder="Tell me about your project"
+        required
+      ></textarea>
+
+      <button type="submit" class="primary">
+        Request Consultation
+      </button>
+
+      <p id="formMessage"></p>
+
     </form>
 
   </div>
